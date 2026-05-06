@@ -4,275 +4,429 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>东莞市百偲特表面处理原料有限公司 | 电镀原料专家</title>
+<meta name="description" content="百偲特专注电镀原料、电镀前后处理药水、电镀添加剂的研发与供应，20年行业经验，1000+合作客户。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.6; }
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0d47a1;--primary-dark:#082e6e;--primary-light:#1565c0;
+  --accent:#ff6f00;--accent-light:#ff8f00;
+  --text:#212121;--text-light:#616161;--text-muted:#9e9e9e;
+  --bg:#ffffff;--bg-alt:#f5f7fa;--bg-dark:#0a1628;
+  --border:#e0e0e0;--shadow:0 2px 20px rgba(0,0,0,0.08);
+}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;color:var(--text);line-height:1.7;overflow-x:hidden}
 
-/* Hero */
-.hero {
-  background: linear-gradient(135deg, #1a3a5c 0%, #2d6da8 100%);
-  color: #fff; text-align: center; padding: 60px 20px 50px;
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-icon{width:36px;height:36px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px}
+.nav-logo-text{font-size:16px;font-weight:700;color:var(--primary)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-light);font-size:14px;font-weight:500;transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width .3s}
+.nav-links a:hover{color:var(--primary)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+.nav-mobile{display:none;background:none;border:none;cursor:pointer;padding:8px}
+.nav-mobile span{display:block;width:22px;height:2px;background:var(--text);margin:5px 0;transition:all .3s}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-dark) 0%,#0d2137 40%,var(--primary-dark) 100%);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23ffffff' stroke-width='.3' opacity='.05'/%3E%3C/svg%3E");opacity:.4}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg-alt),transparent)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:120px 24px 80px;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:8px 20px;border-radius:30px;color:rgba(255,255,255,0.9);font-size:13px;margin-bottom:28px;backdrop-filter:blur(4px)}
+.hero-badge::before{content:'';width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(32px,5vw,56px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:20px;letter-spacing:-0.5px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:clamp(15px,2vw,18px);color:rgba(255,255,255,0.7);max-width:640px;margin:0 auto 36px;line-height:1.8}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:600;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(255,111,0,0.3)}
+.btn-outline{background:transparent;color:#fff;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:500;border:1px solid rgba(255,255,255,0.3);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
+.hero-stats{display:flex;justify-content:center;gap:48px;margin-top:60px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.1)}
+.hero-stat{text-align:center}
+.hero-stat-num{font-size:36px;font-weight:800;color:#fff}
+.hero-stat-num span{color:var(--accent);font-size:24px}
+.hero-stat-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* ===== SECTIONS ===== */
+.section{padding:100px 24px}
+.section-header{text-align:center;margin-bottom:60px}
+.section-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+.section-title{font-size:clamp(24px,3.5vw,36px);font-weight:700;color:var(--text);margin-bottom:16px}
+.section-desc{font-size:16px;color:var(--text-light);max-width:600px;margin:0 auto}
+.container{max-width:1100px;margin:0 auto}
+
+/* ===== ABOUT ===== */
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-visual{position:relative;padding:40px}
+.about-card{background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:16px;padding:40px;color:#fff;position:relative;overflow:hidden}
+.about-card::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:rgba(255,255,255,0.1);border-radius:50%}
+.about-card::after{content:'';position:absolute;bottom:-60px;left:-30px;width:200px;height:200px;background:rgba(255,255,255,0.05);border-radius:50%}
+.about-card h3{font-size:28px;font-weight:700;margin-bottom:16px;position:relative;z-index:1}
+.about-card p{font-size:15px;opacity:0.9;line-height:1.8;position:relative;z-index:1}
+.about-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;position:relative;z-index:1}
+.about-feat{display:flex;align-items:center;gap:10px;font-size:14px;opacity:0.9}
+.about-feat::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;flex-shrink:0}
+.about-text h3{font-size:24px;font-weight:700;color:var(--primary);margin-bottom:16px}
+.about-text p{font-size:15px;color:var(--text-light);margin-bottom:16px;line-height:1.9}
+.about-text .highlight{display:flex;align-items:center;gap:12px;padding:16px 20px;background:var(--bg-alt);border-radius:10px;margin-top:20px}
+.about-text .highlight-icon{width:44px;height:44px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.about-text .highlight-text{font-size:14px;color:var(--text-light)}
+.about-text .highlight-text strong{color:var(--text);display:block;font-size:16px;margin-bottom:2px}
+
+/* ===== PRODUCTS ===== */
+.products{background:var(--bg-alt)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.product-card{background:#fff;border-radius:14px;padding:36px 28px;text-align:center;box-shadow:var(--shadow);transition:all .3s;border:1px solid transparent;position:relative;overflow:hidden}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,0.12);border-color:var(--primary)}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transition:transform .3s}
+.product-card:hover::before{transform:scaleX(1)}
+.product-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--bg-alt),#e3eaf2);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px;transition:all .3s}
+.product-card:hover .product-icon{background:linear-gradient(135deg,var(--primary),var(--primary-light));transform:scale(1.05)}
+.product-card:hover .product-icon span{filter:brightness(10)}
+.product-card h3{font-size:18px;font-weight:700;color:var(--text);margin-bottom:10px}
+.product-card p{font-size:14px;color:var(--text-light);line-height:1.7;margin-bottom:16px}
+.product-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600}
+.tag-core{background:#e3f2fd;color:var(--primary)}
+.tag-general{background:#fff3e0;color:var(--accent)}
+.tag-quality{background:#e8f5e9;color:#2e7d32}
+.tag-custom{background:#f3e5f5;color:#7b1fa2}
+
+/* ===== GALLERY ===== */
+.gallery{background:var(--bg)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:4/3;background:#e8e8e8}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-item:hover img{transform:scale(1.08)}
+.gallery-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.4),transparent);opacity:0;transition:opacity .3s}
+.gallery-item:hover::after{opacity:1}
+.gallery-label{position:absolute;bottom:12px;left:12px;color:#fff;font-size:13px;font-weight:500;z-index:2;opacity:0;transition:opacity .3s}
+.gallery-item:hover .gallery-label{opacity:1}
+
+/* ===== ADVANTAGES ===== */
+.advantages{background:var(--bg-alt)}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.adv-item{text-align:center;padding:36px 20px;background:#fff;border-radius:14px;box-shadow:var(--shadow);transition:all .3s;border:1px solid transparent}
+.adv-item:hover{transform:translateY(-4px);border-color:var(--primary)}
+.adv-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:24px;transition:transform .3s}
+.adv-item:hover .adv-icon{transform:scale(1.1) rotate(-3deg)}
+.adv-item h4{font-size:16px;font-weight:700;color:var(--text);margin-bottom:8px}
+.adv-item p{font-size:13px;color:var(--text-light);line-height:1.7}
+
+/* ===== CTA ===== */
+.cta-section{background:linear-gradient(135deg,var(--bg-dark),var(--primary-dark));padding:80px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='%23ffffff' opacity='.08'/%3E%3C/svg%3E")}
+.cta-content{position:relative;z-index:2}
+.cta-section h2{font-size:clamp(24px,3vw,32px);color:#fff;font-weight:700;margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,0.7);font-size:16px;margin-bottom:32px}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:16px 40px;border-radius:8px;text-decoration:none;font-size:16px;font-weight:600;transition:all .2s}
+.cta-btn:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,111,0,0.35)}
+.cta-phone{color:rgba(255,255,255,0.5);font-size:13px;margin-top:16px}
+.cta-phone a{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* ===== CONTACT ===== */
+.contact{background:var(--bg);padding:80px 24px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.contact-card{padding:32px;background:var(--bg-alt);border-radius:14px;text-align:center;transition:all .3s;border:1px solid transparent}
+.contact-card:hover{border-color:var(--primary);box-shadow:var(--shadow)}
+.contact-card .icon{width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--primary-light));border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px}
+.contact-card h4{font-size:14px;color:var(--text-muted);font-weight:500;margin-bottom:8px}
+.contact-card .value{font-size:16px;font-weight:600;color:var(--text)}
+.contact-card .value a{color:var(--text);text-decoration:none;transition:color .2s}
+.contact-card .value a:hover{color:var(--primary)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--bg-dark);color:rgba(255,255,255,0.4);text-align:center;padding:24px;font-size:12px}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-mobile{display:block}
+  .hero-stats{gap:24px}
+  .hero-stat-num{font-size:28px}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .adv-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
 }
-.hero h1 { font-size: 28px; margin-bottom: 8px; letter-spacing: 2px; }
-.hero .subtitle { font-size: 16px; opacity: 0.9; margin-bottom: 20px; }
-.hero .badge {
-  display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
-  padding: 6px 18px; border-radius: 20px; font-size: 14px;
+@media(max-width:480px){
+  .hero h1{font-size:28px}
+  .hero-stats{flex-direction:column;gap:16px}
+  .product-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:1fr}
 }
 
-/* Section */
-.section { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
-.section-title {
-  font-size: 22px; color: #1a3a5c; text-align: center; margin-bottom: 8px; font-weight: 700;
-}
-.section-line {
-  width: 50px; height: 3px; background: #2d6da8; margin: 0 auto 30px; border-radius: 2px;
-}
-.section p { font-size: 15px; color: #555; text-align: center; }
-
-/* Stats */
-.stats {
-  display: flex; justify-content: center; gap: 30px; padding: 30px 20px;
-  background: #f0f5fa; flex-wrap: wrap;
-}
-.stat-item { text-align: center; }
-.stat-num { font-size: 32px; font-weight: 700; color: #2d6da8; }
-.stat-label { font-size: 13px; color: #777; margin-top: 4px; }
-
-/* Products */
-.products { background: #f8f9fa; }
-.product-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px; max-width: 800px; margin: 0 auto;
-}
-.product-card {
-  background: #fff; border-radius: 10px; padding: 24px 20px; text-align: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.2s;
-}
-.product-card:hover { transform: translateY(-3px); }
-.product-icon { font-size: 36px; margin-bottom: 12px; }
-.product-card h3 { font-size: 16px; color: #1a3a5c; margin-bottom: 8px; }
-.product-card p { font-size: 13px; color: #888; }
-.product-tag {
-  display: inline-block; background: #e8f0fe; color: #2d6da8;
-  padding: 3px 10px; border-radius: 12px; font-size: 12px; margin-top: 10px;
-}
-
-/* Gallery */
-.gallery-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
-  max-width: 800px; margin: 0 auto;
-}
-.gallery-item {
-  border-radius: 8px; overflow: hidden; background: #e8e8e8;
-  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
-  color: #999; font-size: 13px; position: relative;
-}
-.gallery-item img {
-  width: 100%; height: 100%; object-fit: cover;
-}
-
-/* Advantages */
-.advantages { background: #fff; }
-.adv-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px; max-width: 800px; margin: 0 auto;
-}
-.adv-item {
-  text-align: center; padding: 20px 12px;
-  border: 1px solid #eee; border-radius: 8px;
-}
-.adv-item .icon { font-size: 28px; margin-bottom: 8px; }
-.adv-item h4 { font-size: 14px; color: #1a3a5c; margin-bottom: 4px; }
-.adv-item p { font-size: 12px; color: #999; }
-
-/* Contact */
-.contact { background: #1a3a5c; color: #fff; text-align: center; padding: 50px 20px; }
-.contact .section-title { color: #fff; }
-.contact .section-line { background: #5ba3e0; }
-.contact-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px; max-width: 700px; margin: 0 auto;
-}
-.contact-item { padding: 16px; }
-.contact-item .label { font-size: 13px; opacity: 0.7; margin-bottom: 6px; }
-.contact-item .value { font-size: 16px; font-weight: 600; }
-.contact-item .value a { color: #fff; text-decoration: none; }
-
-/* Footer */
-.footer {
-  background: #111; color: #666; text-align: center; padding: 20px;
-  font-size: 12px;
-}
-
-/* CTA Button */
-.cta-btn {
-  display: inline-block; background: #f5a623; color: #fff; padding: 14px 36px;
-  border-radius: 30px; font-size: 16px; font-weight: 600; text-decoration: none;
-  margin-top: 20px; transition: background 0.2s;
-}
-.cta-btn:hover { background: #e6951a; }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .hero h1 { font-size: 22px; }
-  .stats { gap: 16px; }
-  .stat-num { font-size: 26px; }
-  .gallery-grid { grid-template-columns: 1fr; }
-}
+/* ===== ANIMATIONS ===== */
+.fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
 
-<!-- Hero -->
-<div class="hero">
-  <h1>百偲特表面处理</h1>
-  <p class="subtitle">东莞市百偲特表面处理原料有限公司</p>
-  <span class="badge">专注电镀原料 20 年</span>
-</div>
-
-<!-- Stats -->
-<div class="stats">
-  <div class="stat-item">
-    <div class="stat-num">20+</div>
-    <div class="stat-label">年行业经验</div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">BT</div>
+      <div class="nav-logo-text">百偲特</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">关于我们</a></li>
+      <li><a href="#products">核心产品</a></li>
+      <li><a href="#gallery">产品实拍</a></li>
+      <li><a href="#advantages">核心优势</a></li>
+      <li><a href="#contact">联系我们</a></li>
+    </ul>
+    <a href="tel:13925810582" class="nav-cta">立即咨询</a>
+    <button class="nav-mobile" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div class="stat-item">
-    <div class="stat-num">1000+</div>
-    <div class="stat-label">合作客户</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">50+</div>
-    <div class="stat-label">产品品类</div>
-  </div>
-</div>
+</nav>
 
-<!-- About -->
-<div class="section">
-  <div class="section-title">关于我们</div>
-  <div class="section-line"></div>
-  <p>东莞市百偲特表面处理原料有限公司，扎根东莞道滘镇 20 年，专注于电镀原料、电镀前后处理药水、电镀添加剂的研发与供应。我们为电子、五金、汽车零部件等行业客户提供一站式表面处理解决方案，以稳定品质和专业技术赢得客户长期信赖。</p>
-</div>
-
-<!-- Products -->
-<div class="section products">
-  <div class="section-title">核心产品</div>
-  <div class="section-line"></div>
-  <div class="product-grid">
-    <div class="product-card">
-      <div class="product-icon">&#x1F9EA;</div>
-      <h3>电镀添加剂</h3>
-      <p>镀锌、镀镍、镀铬等全系列添加剂，提升镀层质量与效率</p>
-      <span class="product-tag">核心产品</span>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">深耕表面处理行业 20 年</div>
+    <h1>专业电镀原料<span>一站式</span><br>表面处理解决方案</h1>
+    <p>扎根东莞道滘 20 年，专注电镀原料、前后处理药水、电镀添加剂的研发与供应，服务电子、五金、汽车零部件等行业客户</p>
+    <div class="hero-btns">
+      <a href="tel:13925810582" class="btn-primary">立即咨询 &rarr;</a>
+      <a href="#products" class="btn-outline">了解产品</a>
     </div>
-    <div class="product-card">
-      <div class="product-icon">&#x1F52C;</div>
-      <h3>电镀前处理药水</h3>
-      <p>电解除油除锈粉(BS-A3)、活化酸盐(BS-A9)等前处理全系列</p>
-      <span class="product-tag">铜铁通用</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">&#x1F9F9;</div>
-      <h3>电镀后处理药水</h3>
-      <p>钝化液、封闭剂、防锈液等后处理产品，保障镀层持久耐用</p>
-      <span class="product-tag">品质保障</span>
-    </div>
-    <div class="product-card">
-      <div class="product-icon">&#x2697;</div>
-      <h3>煮料液 / 特种药水</h3>
-      <p>锡酸钠、煮料液等特种表面处理原料，按需定制配方</p>
-      <span class="product-tag">定制配方</span>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20<span>+</span></div>
+        <div class="hero-stat-label">年行业经验</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1000<span>+</span></div>
+        <div class="hero-stat-label">合作客户</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">50<span>+</span></div>
+        <div class="hero-stat-label">产品品类</div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Gallery -->
-<div class="section">
-  <div class="section-title">产品实拍</div>
-  <div class="section-line"></div>
-  <div class="gallery-grid">
-    <!-- 请将图片文件放入 images 文件夹，替换下方 src 路径 -->
-    <div class="gallery-item">
-      <img src="images/product-1.webp" alt="电镀原料产品" onerror="this.parentElement.innerHTML='&#x1F4E6; 产品图 1'">
-    </div>
-    <div class="gallery-item">
-      <img src="images/product-2.webp" alt="药水产品" onerror="this.parentElement.innerHTML='&#x1F4E6; 产品图 2'">
-    </div>
-    <div class="gallery-item">
-      <img src="images/product-3.webp" alt="仓库实景" onerror="this.parentElement.innerHTML='&#x1F3ED; 仓库实景'">
-    </div>
-    <div class="gallery-item">
-      <img src="images/product-4.webp" alt="发货现场" onerror="this.parentElement.innerHTML='&#x1F69A; 发货现场'">
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-in">
+        <div class="about-card">
+          <h3>20 年专注<br>表面处理原料</h3>
+          <p>从电镀添加剂到前后处理药水，百偲特始终以技术创新和稳定品质服务每一位客户。</p>
+          <div class="about-features">
+            <div class="about-feat">自主研发配方</div>
+            <div class="about-feat">ISO 质量体系</div>
+            <div class="about-feat">快速响应服务</div>
+            <div class="about-feat">按需定制方案</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <div class="section-tag">About Us</div>
+        <h3>东莞市百偲特表面处理原料有限公司</h3>
+        <p>扎根东莞道滘镇 20 年，专注于电镀原料、电镀前后处理药水、电镀添加剂的研发与供应。我们为电子、五金、汽车零部件等行业客户提供一站式表面处理解决方案。</p>
+        <p>凭借稳定的产品品质、专业的技术团队和快速的供货能力，百偲特赢得了 1000+ 客户的长期信赖，成为华南地区电镀原料领域的标杆企业。</p>
+        <div class="highlight">
+          <div class="highlight-icon">🏭</div>
+          <div class="highlight-text">
+            <strong>厂家直供，价格更有竞争力</strong>
+            去掉中间商，让利给客户
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Advantages -->
-<div class="section advantages">
-  <div class="section-title">为什么选择百偲特</div>
-  <div class="section-line"></div>
-  <div class="adv-grid">
-    <div class="adv-item">
-      <div class="icon">&#x1F3AF;</div>
-      <h4>20年专注</h4>
-      <p>深耕电镀原料领域，专业可靠</p>
+<!-- PRODUCTS -->
+<section class="section products" id="products">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Products</div>
+      <h2 class="section-title">核心产品</h2>
+      <p class="section-desc">全系列电镀原料与表面处理药水，满足不同行业需求</p>
     </div>
-    <div class="adv-item">
-      <div class="icon">&#x1F6E2;</div>
-      <h4>现货供应</h4>
-      <p>充足库存，快速发货不耽误生产</p>
-    </div>
-    <div class="adv-item">
-      <div class="icon">&#x1F91D;</div>
-      <h4>技术支持</h4>
-      <p>专业团队提供配方指导与售后</p>
-    </div>
-    <div class="adv-item">
-      <div class="icon">&#x1F4B0;</div>
-      <h4>厂家直供</h4>
-      <p>去掉中间商，价格更有竞争力</p>
+    <div class="product-grid">
+      <div class="product-card fade-in">
+        <div class="product-icon"><span>⚗️</span></div>
+        <h3>电镀添加剂</h3>
+        <p>镀锌、镀镍、镀铬等全系列添加剂，提升镀层质量与效率，适用于各类电镀工艺</p>
+        <span class="product-tag tag-core">核心产品</span>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><span>🔬</span></div>
+        <h3>电镀前处理药水</h3>
+        <p>电解除油除锈粉(BS-A3)、活化酸盐(BS-A9)等前处理全系列，铜铁通用</p>
+        <span class="product-tag tag-general">铜铁通用</span>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><span>🛡️</span></div>
+        <h3>电镀后处理药水</h3>
+        <p>钝化液、封闭剂、防锈液等后处理产品，保障镀层持久耐用</p>
+        <span class="product-tag tag-quality">品质保障</span>
+      </div>
+      <div class="product-card fade-in">
+        <div class="product-icon"><span>🧪</span></div>
+        <h3>特种药水 / 煮料液</h3>
+        <p>锡酸钠、煮料液等特种表面处理原料，支持按需定制配方</p>
+        <span class="product-tag tag-custom">定制配方</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Contact -->
-<div class="contact">
-  <div class="section-title">联系我们</div>
-  <div class="section-line"></div>
-  <div class="contact-grid">
-    <div class="contact-item">
-      <div class="label">公司全称</div>
-      <div class="value">东莞市百偲特表面处理原料有限公司</div>
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Gallery</div>
+      <h2 class="section-title">产品实拍</h2>
+      <p class="section-desc">真实的产品与仓储场景</p>
     </div>
-    <div class="contact-item">
-      <div class="label">联系电话</div>
-      <div class="value"><a href="tel:076988360860">0769-88360860</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="label">服务热线</div>
-      <div class="value"><a href="tel:13925810582">13925810582</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="label">传真号码</div>
-      <div class="value">0769-88318978</div>
-    </div>
-    <div class="contact-item">
-      <div class="label">QQ 咨询</div>
-      <div class="value">1059399921</div>
-    </div>
-    <div class="contact-item">
-      <div class="label">公司地址</div>
-      <div class="value">广东省东莞市道滘镇</div>
+    <div class="gallery-grid fade-in">
+      <div class="gallery-item">
+        <img src="images/product-1.webp" alt="电镀原料产品" onerror="this.style.display='none'">
+        <div class="gallery-label">电镀原料</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/product-2.webp" alt="药水产品" onerror="this.style.display='none'">
+        <div class="gallery-label">处理药水</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/product-3.webp" alt="仓库实景" onerror="this.style.display='none'">
+        <div class="gallery-label">仓库实景</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/product-4.webp" alt="发货现场" onerror="this.style.display='none'">
+        <div class="gallery-label">发货现场</div>
+      </div>
     </div>
   </div>
-  <a href="tel:13925810582" class="cta-btn">立即咨询 13925810582</a>
-</div>
+</section>
 
-<!-- Footer -->
+<!-- ADVANTAGES -->
+<section class="section advantages" id="advantages">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Advantages</div>
+      <h2 class="section-title">为什么选择百偲特</h2>
+      <p class="section-desc">20 年沉淀，值得信赖的合作伙伴</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-item fade-in">
+        <div class="adv-icon">🎯</div>
+        <h4>20 年专注</h4>
+        <p>深耕电镀原料领域，专业可靠，积累了丰富的行业经验与技术储备</p>
+      </div>
+      <div class="adv-item fade-in">
+        <div class="adv-icon">📦</div>
+        <h4>现货供应</h4>
+        <p>充足库存，快速发货，不耽误您的生产进度</p>
+      </div>
+      <div class="adv-item fade-in">
+        <div class="adv-icon">🤝</div>
+        <h4>技术支持</h4>
+        <p>专业团队提供配方指导与售后跟踪，解决您的后顾之忧</p>
+      </div>
+      <div class="adv-item fade-in">
+        <div class="adv-icon">💰</div>
+        <h4>厂家直供</h4>
+        <p>去掉中间商，价格更有竞争力，让利给每一位客户</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2>需要电镀原料解决方案？</h2>
+    <p>我们的专业团队随时为您服务，提供产品咨询与技术支持</p>
+    <a href="tel:13925810582" class="cta-btn">立即咨询 13925810582 &rarr;</a>
+    <div class="cta-phone">或致电座机：<a href="tel:076988360860">0769-88360860</a></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-tag">Contact</div>
+      <h2 class="section-title">联系我们</h2>
+      <p class="section-desc">期待与您的合作</p>
+    </div>
+    <div class="contact-grid fade-in">
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <h4>服务热线</h4>
+        <div class="value"><a href="tel:13925810582">13925810582</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📠</div>
+        <h4>公司座机 / 传真</h4>
+        <div class="value">
+          <a href="tel:076988360860">0769-88360860</a><br>
+          <small style="font-weight:400;color:var(--text-muted);font-size:13px">传真：0769-88318978</small>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <h4>公司地址</h4>
+        <div class="value">广东省东莞市道滘镇</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <div class="footer">
-  &copy; 2024-2026 东莞市百偲特表面处理原料有限公司 版权所有 | 专注电镀原料 20 年
+  &copy; 2024-2026 东莞市百偲特表面处理原料有限公司 版权所有
 </div>
+
+<script>
+// Nav scroll effect
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50)
+})
+
+// Fade-in on scroll
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})
+},{threshold:0.1})
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el))
+
+// Mobile nav toggle
+document.querySelector('.nav-mobile')?.addEventListener('click',function(){
+  const links=document.querySelector('.nav-links')
+  links.style.display=links.style.display==='flex'?'none':'flex'
+  links.style.flexDirection='column'
+  links.style.position='absolute'
+  links.style.top='64px'
+  links.style.right='24px'
+  links.style.background='#fff'
+  links.style.padding='20px'
+  links.style.borderRadius='12px'
+  links.style.boxShadow='0 8px 30px rgba(0,0,0,0.15)'
+  links.style.gap='16px'
+})
+</script>
 
 </body>
 </html>
-<!-- trigger deploy -->
